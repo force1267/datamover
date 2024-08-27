@@ -1,0 +1,12 @@
+FROM node:14-alpine
+
+COPY ./package.json /root/package.json
+COPY ./yarn.lock /root/yarn.lock
+COPY .eslintrc.js /root/.eslintrc.js
+
+WORKDIR /root
+RUN yarn install --frozen-lockfile && yarn cache clean
+COPY . /root
+
+RUN yarn lint
+RUN yarn test

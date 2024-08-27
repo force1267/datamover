@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: datamover
+spec:
+  template:
+    metadata:
+      name: datamover
+    spec:
+      containers:
+        - name: datamover
+          image: datamover:latest
+          args:
+            - --restart-if-finished
+            - --restart-commit
+            - --restart-commit-and-exit
+            - --option=value
+            - job-name-1
+            - job-name-2
+      restartPolicy: OnFailure
+      terminationGracePeriodSeconds: 30

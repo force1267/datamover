@@ -1,0 +1,30 @@
+{
+  "name": "datamover",
+  "version": "1.0.0",
+  "main": "index.js",
+  "jest": {
+    "testRegex": "\\.test\\.js$"
+  },
+  "scripts": {
+    "test": "jest --coverage --noStackTrace --silent --verbose --forceExit",
+    "lint": "eslint ."
+  },
+  "keywords": [],
+  "author": "github.com/force1267",
+  "license": "MIT",
+  "dependencies": {
+    "mongodb": "^5.2.0",
+    "pg": "^8.10.0",
+    "redis": "^4.6.5"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.1.0"
+  },
+  "description": "moves data from a source to destination"
+}
